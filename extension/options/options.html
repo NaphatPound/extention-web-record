@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Record — Options</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Web Record — Editor</h1>
+      <div>
+        <label for="api-url">API URL</label>
+        <input id="api-url" type="text" placeholder="http://localhost:8787" />
+        <button id="btn-save-api">Save</button>
+        <span id="api-status" class="pill">checking…</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Recordings</h2>
+        <ul id="recording-list"></ul>
+        <button id="btn-refresh-recordings">Refresh</button>
+      </div>
+
+      <div class="panel wide">
+        <h2>Editor</h2>
+        <label>Name</label>
+        <input id="edit-name" type="text" />
+        <label>Description</label>
+        <input id="edit-description" type="text" />
+        <label>Steps JSON</label>
+        <textarea id="edit-steps" rows="18" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="btn-save-edit" class="primary">Save changes</button>
+          <span class="hint">Use <code>{{variable_name}}</code> in <code>value</code> fields to substitute dataset rows.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Datasets</h2>
+      <div class="row">
+        <input id="new-dataset-name" type="text" placeholder="dataset name" />
+        <button id="btn-create-dataset">Create dataset</button>
+      </div>
+      <select id="dataset-select"></select>
+      <div class="row">
+        <textarea id="new-row-json" rows="3" placeholder='{"prompt_text": "A cat", "base_image_url": "/api/files/1"}'></textarea>
+        <button id="btn-add-row">Add row</button>
+      </div>
+      <ul id="row-list"></ul>
+    </section>
+  </main>
+  <div id="toast"></div>
+  <script src="options.js" type="module"></script>
+</body>
+</html>

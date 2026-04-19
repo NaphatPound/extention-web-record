@@ -1,0 +1,115 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #1f2328;
+  background: #f6f8fa;
+}
+main {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 24px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+header > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+h1 { font-size: 22px; margin: 0; }
+h2 { font-size: 15px; margin: 0 0 10px; }
+.panel {
+  background: white;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.grid { display: grid; grid-template-columns: 280px 1fr; gap: 16px; }
+.wide { min-height: 400px; }
+label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin: 8px 0 4px;
+}
+input, select, textarea, button {
+  font: inherit;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  background: white;
+}
+input, select, textarea { width: 100%; }
+textarea { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 12px; }
+button {
+  cursor: pointer;
+  background: #f6f8fa;
+  font-weight: 500;
+}
+button:hover:not(:disabled) { background: #eef1f4; }
+button.primary { background: #1f883d; color: white; border-color: #1f883d; }
+button.primary:hover:not(:disabled) { background: #197730; }
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+.row button { white-space: nowrap; }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+li {
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+li:hover { background: #f6f8fa; }
+li.active { border-color: #1f883d; background: #f0fdf4; }
+.pill {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #eee;
+  color: #444;
+}
+.pill.ok { background: #d1fadf; color: #027a48; }
+.pill.bad { background: #fee4e2; color: #b42318; }
+.hint { font-size: 12px; color: #666; }
+code {
+  background: #eef1f4;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f2328;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: none;
+  z-index: 100;
+}
+#toast.show { display: block; }

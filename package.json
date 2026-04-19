@@ -1,0 +1,13 @@
+{
+  "name": "web-record",
+  "version": "0.1.0",
+  "description": "Chrome Extension + API server for recording and replaying web actions with data-driven automation",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test tests/api.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

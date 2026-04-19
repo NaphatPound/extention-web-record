@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Web Record",
+  "version": "0.1.0",
+  "description": "Record clicks and inputs on any webpage, then replay them as a data-driven automation bot.",
+  "permissions": ["activeTab", "scripting", "storage", "downloads", "tabs"],
+  "host_permissions": ["<all_urls>", "http://localhost:8787/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/selector.js", "content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Web Record"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  }
+}

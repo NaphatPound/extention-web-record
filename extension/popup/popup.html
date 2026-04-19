@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Record</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Web Record</h1>
+    <span id="api-status" class="pill">checking…</span>
+  </header>
+
+  <section class="actions">
+    <button id="btn-record" class="primary">● Start recording</button>
+    <button id="btn-stop" disabled>■ Stop</button>
+  </section>
+
+  <section>
+    <div class="row">
+      <span id="step-count">0 steps captured</span>
+      <button id="btn-clear" class="link">Clear</button>
+    </div>
+  </section>
+
+  <section>
+    <label>Save recording as</label>
+    <input id="save-name" type="text" placeholder="e.g. Generate 10 images" />
+    <button id="btn-save">Save to API</button>
+  </section>
+
+  <section>
+    <label>Saved recordings</label>
+    <select id="recording-list"></select>
+    <div class="row">
+      <button id="btn-play">▶ Play on active tab</button>
+      <button id="btn-delete" class="link danger">Delete</button>
+    </div>
+  </section>
+
+  <section>
+    <label>Run with dataset (optional)</label>
+    <select id="dataset-list">
+      <option value="">— no dataset (single run) —</option>
+    </select>
+  </section>
+
+  <footer>
+    <a id="link-options" href="#">Options / Editor</a>
+  </footer>
+
+  <div id="toast"></div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
