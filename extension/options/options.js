@@ -35,9 +35,29 @@ async function checkHealth() {
 }
 
 $('#btn-save-api').addEventListener('click', async () => {
-  const url = $('#api-url').value.trim();
-  if (!url) return;
-  await send({ type: 'setApiUrl', apiUrl: url });
+  const raw = $('#api-url').value.trim();
+  if (!raw) return toast('Enter an API URL');
+  let parsed;
+  try {
+    parsed = new URL(raw);
+  } catch {
+    return toast('Invalid URL — include http:// or https://');
+  }
+  if (!['http:', 'https:'].includes(parsed.protocol)) {
+    return toast('API URL must use http:// or https://');
+  }
+  const base = raw.replace(/\/$/, '');
+  try {
+    const probe = await fetch(`${base}/api/health`);
+    if (!probe.ok) throw new Error(`HTTP ${probe.status}`);
+    const data = await probe.json();
+    if (data?.status !== 'ok') throw new Error('unexpected health response');
+  } catch (err) {
+    $('#api-status').textContent = 'API down';
+    $('#api-status').className = 'pill bad';
+    return toast(`API URL unreachable: ${err.message || err}`);
+  }
+  await send({ type: 'setApiUrl', apiUrl: base });
   await checkHealth();
   toast('API URL saved');
 });

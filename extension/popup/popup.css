@@ -87,3 +87,29 @@ footer a { color: #0969da; font-size: 12px; }
   display: none;
 }
 #toast.show { display: block; }
+
+#log-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 6px 8px;
+  max-height: 160px;
+  overflow-y: auto;
+  background: #0d1117;
+  color: #c9d1d9;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.4;
+}
+#log-list li {
+  padding: 2px 0;
+  border-bottom: 1px solid #21262d;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+#log-list li:last-child { border-bottom: none; }
+#log-list li.error { color: #ff7b72; }
+#log-list li.warn { color: #f0b429; }
+#log-list li.info { color: #79c0ff; }
+#log-list li .ts { color: #8b949e; margin-right: 6px; }
+#log-list li.empty { color: #8b949e; font-style: italic; }

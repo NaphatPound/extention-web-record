@@ -4,6 +4,37 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const VALID_ACTIONS = new Set([
+  'click',
+  'type_text',
+  'select_option',
+  'upload_file',
+  'wait',
+  'navigate',
+]);
+const ACTIONS_REQUIRING_SELECTOR = new Set(['click', 'type_text', 'select_option', 'upload_file']);
+const ACTIONS_REQUIRING_VALUE = new Set(['type_text', 'select_option', 'navigate']);
+
+function validateSteps(steps) {
+  if (!Array.isArray(steps)) throw new ValidationError('steps must be an array');
+  steps.forEach((step, i) => {
+    if (!step || typeof step !== 'object' || Array.isArray(step)) {
+      throw new ValidationError(`steps[${i}] must be an object`);
+    }
+    if (!VALID_ACTIONS.has(step.action)) {
+      throw new ValidationError(`steps[${i}].action is invalid: ${step.action ?? '(missing)'}`);
+    }
+    if (ACTIONS_REQUIRING_SELECTOR.has(step.action)) {
+      if (typeof step.selector !== 'string' || !step.selector.trim()) {
+        throw new ValidationError(`steps[${i}].selector is required for ${step.action}`);
+      }
+    }
+    if (ACTIONS_REQUIRING_VALUE.has(step.action) && step.value === undefined) {
+      throw new ValidationError(`steps[${i}].value is required for ${step.action}`);
+    }
+  });
+}
+
 export class JsonStore {
   constructor(dataDir = path.join(__dirname, 'data')) {
     this.dataDir = dataDir;
@@ -65,8 +96,10 @@ export class JsonStore {
   }
 
   async createRecording({ name, description = '', steps = [] }) {
-    if (!name || typeof name !== 'string') throw new ValidationError('name is required');
-    if (!Array.isArray(steps)) throw new ValidationError('steps must be an array');
+    if (!name || typeof name !== 'string' || !name.trim()) {
+      throw new ValidationError('name is required');
+    }
+    validateSteps(steps);
     const row = {
       id: this.#nextId('recordings'),
       name,
@@ -83,10 +116,15 @@ export class JsonStore {
   async updateRecording(id, patch) {
     const row = this.getRecording(id);
     if (!row) return null;
-    if (patch.name !== undefined) row.name = patch.name;
+    if (patch.name !== undefined) {
+      if (typeof patch.name !== 'string' || !patch.name.trim()) {
+        throw new ValidationError('name cannot be empty');
+      }
+      row.name = patch.name;
+    }
     if (patch.description !== undefined) row.description = patch.description;
     if (patch.steps !== undefined) {
-      if (!Array.isArray(patch.steps)) throw new ValidationError('steps must be an array');
+      validateSteps(patch.steps);
       row.steps = patch.steps;
     }
     row.updated_at = this.#now();

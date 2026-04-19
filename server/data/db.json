@@ -1,10 +1,461 @@
 {
-  "recordings": [],
+  "recordings": [
+    {
+      "id": 1,
+      "name": "smoke",
+      "description": "",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "selector": "#x"
+        }
+      ],
+      "created_at": "2026-04-19T19:07:17.099Z",
+      "updated_at": "2026-04-19T19:07:17.099Z"
+    },
+    {
+      "id": 2,
+      "name": "gen cat",
+      "description": "",
+      "steps": [
+        {
+          "action": "click",
+          "element": {
+            "className": "is-empty is-editor-empty",
+            "id": null,
+            "innerText": "",
+            "tagName": "p"
+          },
+          "position": {
+            "x": 601,
+            "y": 771
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "step": 1,
+          "timestamp": 1776629238868,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/p[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": null,
+            "id": null,
+            "innerText": "",
+            "tagName": "svg"
+          },
+          "position": {
+            "x": 1229,
+            "y": 816
+          },
+          "selector": "button:nth-of-type(1) > div:nth-of-type(1) > svg:nth-of-type(1)",
+          "step": 2,
+          "timestamp": 1776629242594,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]/div[1]/svg[1]"
+        }
+      ],
+      "created_at": "2026-04-19T20:07:44.042Z",
+      "updated_at": "2026-04-19T20:07:44.042Z"
+    },
+    {
+      "id": 3,
+      "name": "gen cat2",
+      "description": "",
+      "steps": [
+        {
+          "action": "click",
+          "element": {
+            "className": "is-empty is-editor-empty",
+            "id": null,
+            "innerText": "",
+            "tagName": "p"
+          },
+          "position": {
+            "x": 587,
+            "y": 770
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "step": 1,
+          "timestamp": 1776629633269,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/p[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": "",
+            "id": null,
+            "innerText": "cat",
+            "tagName": "p"
+          },
+          "position": {
+            "x": 638,
+            "y": 780
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "step": 2,
+          "timestamp": 1776629636404,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/p[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": null,
+            "id": null,
+            "innerText": "",
+            "tagName": "svg"
+          },
+          "position": {
+            "x": 1233,
+            "y": 813
+          },
+          "selector": "button:nth-of-type(1) > div:nth-of-type(1) > svg:nth-of-type(1)",
+          "step": 3,
+          "timestamp": 1776629637833,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]/div[1]/svg[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": null,
+            "id": null,
+            "innerText": "",
+            "tagName": "path"
+          },
+          "position": {
+            "x": 286,
+            "y": 31
+          },
+          "selector": "div:nth-of-type(2) > button:nth-of-type(1) > svg:nth-of-type(1) > path:nth-of-type(1)",
+          "step": 4,
+          "timestamp": 1776629645528,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]/path[1]"
+        }
+      ],
+      "created_at": "2026-04-19T20:14:18.900Z",
+      "updated_at": "2026-04-19T20:14:18.901Z"
+    },
+    {
+      "id": 4,
+      "name": "gen cat3",
+      "description": "",
+      "steps": [
+        {
+          "action": "click",
+          "element": {
+            "className": "tiptap ProseMirror w-full px-2 bg-transparent focus:outline-none text-primary align-bottom overflow-y-auto !max-w-none prose [&_ul>li>p]:my-0 [&_ol>li>p]:my-0 [&_li>ol]:my-0 [&_li>ul]:my-0 [&_p]:my-0 [&_ul]:my-0 [&_ol]:my-0 py-3.5 my-0 max-h-40 ProseMirror-focused",
+            "id": null,
+            "innerText": "",
+            "tagName": "div"
+          },
+          "position": {
+            "x": 577,
+            "y": 756
+          },
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+          "step": 1,
+          "timestamp": 1776629968400,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": null,
+            "id": null,
+            "innerText": "",
+            "tagName": "svg"
+          },
+          "position": {
+            "x": 1238,
+            "y": 811
+          },
+          "selector": "button:nth-of-type(1) > div:nth-of-type(1) > svg:nth-of-type(1)",
+          "step": 2,
+          "timestamp": 1776629972314,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]/div[1]/svg[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": null,
+            "id": null,
+            "innerText": "",
+            "tagName": "svg"
+          },
+          "position": {
+            "x": 292,
+            "y": 26
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1) > svg:nth-of-type(1)",
+          "step": 3,
+          "timestamp": 1776629987469,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]"
+        }
+      ],
+      "created_at": "2026-04-19T20:20:10.515Z",
+      "updated_at": "2026-04-19T20:20:10.515Z"
+    },
+    {
+      "id": 5,
+      "name": "gen cat4",
+      "description": "",
+      "steps": [
+        {
+          "action": "click",
+          "element": {
+            "className": "is-empty is-editor-empty",
+            "id": null,
+            "innerText": "",
+            "tagName": "p"
+          },
+          "position": {
+            "x": 732,
+            "y": 760
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "step": 1,
+          "timestamp": 1776630418733,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/p[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": "group flex flex-col justify-center rounded-full focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
+            "id": null,
+            "innerText": "",
+            "tagName": "button"
+          },
+          "position": {
+            "x": 1226,
+            "y": 811
+          },
+          "selector": "button[aria-label=\"Submit\"]",
+          "step": 2,
+          "timestamp": 1776630422222,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium leading-[normal] cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-100 [&_svg]:shrink-0 select-none border border-border-l2 text-fg-primary disabled:hover:bg-transparent rounded-full overflow-hidden h-10 w-10 p-2 bg-surface-l1 hover:bg-surface-l2 border-none shadow-sm",
+            "id": null,
+            "innerText": "",
+            "tagName": "button"
+          },
+          "position": {
+            "x": 289,
+            "y": 32
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+          "step": 3,
+          "timestamp": 1776630435212,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]"
+        }
+      ],
+      "created_at": "2026-04-19T20:27:28.457Z",
+      "updated_at": "2026-04-19T20:27:28.457Z"
+    },
+    {
+      "id": 6,
+      "name": "gen cat5",
+      "description": "",
+      "steps": [
+        {
+          "action": "click",
+          "element": {
+            "className": "is-empty is-editor-empty",
+            "id": null,
+            "innerText": "",
+            "tagName": "p"
+          },
+          "position": {
+            "x": 690,
+            "y": 766
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "step": 1,
+          "timestamp": 1776630782844,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/p[1]"
+        },
+        {
+          "action": "type_text",
+          "contentEditable": true,
+          "element": {
+            "className": "tiptap ProseMirror w-full px-2 bg-transparent focus:outline-none text-primary align-bottom overflow-y-auto !max-w-none prose [&_ul>li>p]:my-0 [&_ol>li>p]:my-0 [&_li>ol]:my-0 [&_li>ul]:my-0 [&_p]:my-0 [&_ul]:my-0 [&_ol]:my-0 py-3.5 my-0 max-h-40 ProseMirror-focused",
+            "id": null,
+            "innerText": "cat",
+            "tagName": "div"
+          },
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+          "step": 2,
+          "timestamp": 1776630784646,
+          "url": "https://grok.com/imagine",
+          "value": "cat",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": "group flex flex-col justify-center rounded-full focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
+            "id": null,
+            "innerText": "",
+            "tagName": "button"
+          },
+          "position": {
+            "x": 1225,
+            "y": 816
+          },
+          "selector": "button[aria-label=\"Submit\"]",
+          "step": 3,
+          "timestamp": 1776630786572,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]"
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium leading-[normal] cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-100 [&_svg]:shrink-0 select-none border border-border-l2 text-fg-primary disabled:hover:bg-transparent rounded-full overflow-hidden h-10 w-10 p-2 bg-surface-l1 hover:bg-surface-l2 border-none shadow-sm",
+            "id": null,
+            "innerText": "",
+            "tagName": "button"
+          },
+          "position": {
+            "x": 283,
+            "y": 31
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+          "step": 4,
+          "timestamp": 1776630796687,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]"
+        }
+      ],
+      "created_at": "2026-04-19T20:33:27.175Z",
+      "updated_at": "2026-04-19T20:33:27.175Z"
+    },
+    {
+      "id": 7,
+      "name": "dog gen",
+      "description": "",
+      "steps": [
+        {
+          "action": "click",
+          "element": {
+            "className": "is-empty is-editor-empty",
+            "id": null,
+            "innerText": "",
+            "tagName": "p"
+          },
+          "position": {
+            "x": 608,
+            "y": 765
+          },
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+          "step": 1,
+          "timestamp": 1776631445555,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/p[1]"
+        },
+        {
+          "action": "wait",
+          "step": 2,
+          "timestamp": 1776631445555,
+          "url": "https://grok.com/imagine",
+          "value": 5000
+        },
+        {
+          "action": "type_text",
+          "contentEditable": true,
+          "element": {
+            "className": "tiptap ProseMirror w-full px-2 bg-transparent focus:outline-none text-primary align-bottom overflow-y-auto !max-w-none prose [&_ul>li>p]:my-0 [&_ol>li>p]:my-0 [&_li>ol]:my-0 [&_li>ul]:my-0 [&_p]:my-0 [&_ul]:my-0 [&_ol]:my-0 py-3.5 my-0 max-h-40 ProseMirror-focused",
+            "id": null,
+            "innerText": "d",
+            "tagName": "div"
+          },
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+          "step": 3,
+          "timestamp": 1776631448002,
+          "url": "https://grok.com/imagine",
+          "value": "d",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]"
+        },
+        {
+          "action": "wait",
+          "step": 4,
+          "timestamp": 1776631448002,
+          "url": "https://grok.com/imagine",
+          "value": 5000
+        },
+        {
+          "action": "type_text",
+          "contentEditable": true,
+          "element": {
+            "className": "tiptap ProseMirror w-full px-2 bg-transparent focus:outline-none text-primary align-bottom overflow-y-auto !max-w-none prose [&_ul>li>p]:my-0 [&_ol>li>p]:my-0 [&_li>ol]:my-0 [&_li>ul]:my-0 [&_p]:my-0 [&_ul]:my-0 [&_ol]:my-0 py-3.5 my-0 max-h-40 ProseMirror-focused",
+            "id": null,
+            "innerText": "dog",
+            "tagName": "div"
+          },
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+          "step": 5,
+          "timestamp": 1776631448896,
+          "url": "https://grok.com/imagine",
+          "value": "dog",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]"
+        },
+        {
+          "action": "wait",
+          "step": 6,
+          "timestamp": 1776631448898,
+          "url": "https://grok.com/imagine",
+          "value": 5000
+        },
+        {
+          "action": "click",
+          "element": {
+            "className": "group flex flex-col justify-center rounded-full focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
+            "id": null,
+            "innerText": "",
+            "tagName": "button"
+          },
+          "position": {
+            "x": 1237,
+            "y": 817
+          },
+          "selector": "button[aria-label=\"Submit\"]",
+          "step": 7,
+          "timestamp": 1776631450682,
+          "url": "https://grok.com/imagine",
+          "xpath": "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]"
+        },
+        {
+          "action": "wait",
+          "step": 8,
+          "timestamp": 1776631450683,
+          "url": "https://grok.com/imagine",
+          "value": 5000
+        }
+      ],
+      "created_at": "2026-04-19T20:44:34.641Z",
+      "updated_at": "2026-04-19T20:44:34.641Z"
+    }
+  ],
   "datasets": [],
   "dataset_rows": [],
   "files": [],
   "counters": {
-    "recordings": 0,
+    "recordings": 7,
     "datasets": 0,
     "dataset_rows": 0,
     "files": 0

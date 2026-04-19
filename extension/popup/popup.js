@@ -31,6 +31,32 @@ async function refreshBuffer() {
   $('#step-count').textContent = `${count} steps captured`;
 }
 
+async function refreshRecordingState() {
+  const res = await send({ type: 'getRecordingState' });
+  const active = !!(res?.ok && res.active);
+  $('#btn-record').disabled = active;
+  $('#btn-stop').disabled = !active;
+}
+
+async function refreshTabTargetState() {
+  let url = '';
+  try {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    url = tab?.url || '';
+  } catch {}
+  const playable = /^https?:\/\//i.test(url);
+  const playBtn = $('#btn-play');
+  const recBtn = $('#btn-record');
+  playBtn.disabled = !playable;
+  playBtn.title = playable ? '' : 'Switch to a regular http(s) tab to play a recording';
+  if (!playable) {
+    // Recording is also scoped to a content script; keep the hint consistent.
+    recBtn.title = 'Switch to a regular http(s) tab to start recording';
+  } else {
+    recBtn.title = '';
+  }
+}
+
 async function refreshRecordings() {
   const res = await send({ type: 'listRecordings' });
   const sel = $('#recording-list');
@@ -125,9 +151,13 @@ $('#btn-play').addEventListener('click', async () => {
 
   toast(`Playing ${rec.recording.steps.length} steps × ${rows.length} row(s)`);
   const result = await send({ type: 'runPlayback', steps: rec.recording.steps, rows });
-  if (!result.ok) return toast(`Playback error: ${result.error}`);
-  const failures = (result.results || []).filter((r) => !r.ok).length;
-  toast(failures ? `Done with ${failures} failure(s)` : 'Playback complete');
+  if (!result.ok) return toast(`Playback error: ${result.error}`, 6000);
+  const failed = (result.results || []).filter((r) => !r.ok);
+  if (failed.length) {
+    toast(`Done with ${failed.length} failure(s): ${failed[0].error || 'unknown error'}`, 6000);
+  } else {
+    toast('Playback complete');
+  }
 });
 
 $('#link-options').addEventListener('click', (ev) => {
@@ -135,8 +165,62 @@ $('#link-options').addEventListener('click', (ev) => {
   chrome.runtime.openOptionsPage();
 });
 
+function fmtTime(ts) {
+  const d = new Date(ts);
+  return d.toLocaleTimeString([], { hour12: false });
+}
+
+async function renderLogs() {
+  const list = $('#log-list');
+  const res = await send({ type: 'getLogs' });
+  list.innerHTML = '';
+  const entries = res?.logs ?? [];
+  if (!entries.length) {
+    const li = document.createElement('li');
+    li.className = 'empty';
+    li.textContent = 'No log entries yet — interact with the extension to generate events.';
+    list.appendChild(li);
+    return;
+  }
+  for (const entry of entries.slice().reverse()) {
+    const li = document.createElement('li');
+    li.className = entry.level || 'info';
+    const ts = document.createElement('span');
+    ts.className = 'ts';
+    ts.textContent = fmtTime(entry.ts);
+    li.appendChild(ts);
+    li.appendChild(document.createTextNode(entry.message));
+    list.appendChild(li);
+  }
+}
+
+$('#btn-toggle-logs').addEventListener('click', async () => {
+  const list = $('#log-list');
+  const clear = $('#btn-clear-logs');
+  const btn = $('#btn-toggle-logs');
+  const showing = !list.hidden;
+  if (showing) {
+    list.hidden = true;
+    clear.hidden = true;
+    btn.textContent = 'Show logs';
+  } else {
+    await renderLogs();
+    list.hidden = false;
+    clear.hidden = false;
+    btn.textContent = 'Hide logs';
+  }
+});
+
+$('#btn-clear-logs').addEventListener('click', async () => {
+  await send({ type: 'clearLogs' });
+  await renderLogs();
+  toast('Logs cleared');
+});
+
 (async function init() {
   await refreshHealth();
+  await refreshRecordingState();
+  await refreshTabTargetState();
   await refreshBuffer();
   await refreshRecordings();
   await refreshDatasets();
